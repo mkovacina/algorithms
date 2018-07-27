@@ -7,9 +7,9 @@
 const int ERR_NO_INPUT = -1;
 const int ERR_LESS_THAN_ONE = -2;
 
-void print(int* x, int r);
-void extend(int* x, int* r);
-void reduce(int* x, int* r);
+void print(const int* x, const int r);
+void extend(const int* x, int* r);
+void reduce(const int* x, int* r);
 
 int main(const int argc, const char* argv)
 {
@@ -50,7 +50,7 @@ int main(const int argc, const char* argv)
 	return 0;
 }
 
-void print(int* x, int r)
+void print(const int* x, const int r)
 {
 	for( int i = 0; i <= r; i++ )
 	{
@@ -59,13 +59,13 @@ void print(int* x, int r)
 	puts();
 }
 
-void extend(int* x, int* r)
+void extend(const int* x, int* r)
 {
 	x[r+1] = x[r]+1;
 	r = r+1;
 }
 
-void reduce(int* x, int* r)
+void reduce(const int* x, int* r)
 {
 	r = r-1;
 	x[r] = x[r]+1;
