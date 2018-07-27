@@ -4,6 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+const int ERR_NO_INPUT = -1;
+const int ERR_LESS_THAN_ONE = -2;
+
 void print(int* x, int r);
 void extend(int* x, int* r);
 void reduce(int* x, int* r);
@@ -13,7 +16,7 @@ int main(const int argc, const char* argv)
 	if (argc == 0)
 	{
 		puts("usage: generate-subsets length");
-		return -1;
+		return ERR_NO_INPUT;
 	}
 
 	// the length of the sequence
@@ -22,7 +25,7 @@ int main(const int argc, const char* argv)
 	if (length < 1)
 	{
 		puts("Length parameter must be greater than 0");
-		return -2;
+		return ERR_LESS_THAN_ONE;
 	}
 
 	int r = 0;
