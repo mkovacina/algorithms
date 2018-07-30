@@ -13,7 +13,7 @@ void reduce(int* const x, int* r);
 
 int main(const int argc, const char* argv[])
 {
-	if (argc == 0)
+	if (argc < 2)
 	{
 		puts("usage: generate-subsets length");
 		return ERR_NO_INPUT;
