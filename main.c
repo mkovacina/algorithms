@@ -8,10 +8,10 @@ const int ERR_NO_INPUT = -1;
 const int ERR_LESS_THAN_ONE = -2;
 
 void print(const int* x, const int r);
-void extend(const int* x, int* r);
-void reduce(const int* x, int* r);
+void extend(int* const x, int* r);
+void reduce(int* const x, int* r);
 
-int main(const int argc, const char* argv)
+int main(const int argc, const char* argv[])
 {
 	if (argc == 0)
 	{
@@ -29,7 +29,7 @@ int main(const int argc, const char* argv)
 	}
 
 	int r = 0;
-	int* x = calloc(length*sizeof(int));
+	int* x = calloc(length,sizeof(int));
 	x[r] = 0;
 
 	do
@@ -56,17 +56,17 @@ void print(const int* x, const int r)
 	{
 		printf("%d ", x[i]);
 	}
-	puts();
+	puts("");
 }
 
-void extend(const int* x, int* r)
+void extend(int* const x, int* r)
 {
-	x[r+1] = x[r]+1;
-	r = r+1;
+	x[*r+1] = x[*r]+1;
+	*r = *r+1;
 }
 
-void reduce(const int* x, int* r)
+void reduce(int* const x, int* r)
 {
-	r = r-1;
-	x[r] = x[r]+1;
+	*r = *r-1;
+	x[*r] = x[*r]+1;
 }
