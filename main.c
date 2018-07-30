@@ -20,7 +20,7 @@ int main(const int argc, const char* argv[])
 	}
 
 	// the length of the sequence
-	int length = atoi(argv[0]);
+	int length = atoi(argv[1]);
 
 	if (length < 1)
 	{
